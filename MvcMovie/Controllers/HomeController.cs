@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MvcMovie.Models;
 
@@ -12,11 +13,15 @@ namespace MvcMovie.Controllers
     {
         public IActionResult Index()
         {
+            HttpContext.Session.SetString("Test", "Ben Rules!");
+
             return View();
         }
 
         public IActionResult About()
         {
+            ViewBag.Message = HttpContext.Session.GetString("Test");
+
             ViewData["Message"] = "Your application description page.";
 
             return View();
