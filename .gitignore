@@ -1,3 +1,5 @@
 .vs/
 MvcMovie/obj/
 MvcMovie/bin/
+MvcMovie/MvcMovie.csproj.user
+MvcMovie/Properties/PublishProfiles/FolderProfile.pubxml.user
